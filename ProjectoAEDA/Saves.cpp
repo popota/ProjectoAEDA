@@ -49,9 +49,9 @@ void guardaFornecedoresFicheiro(vector<Fornecedor> fornecedores, string ficheiro
 			file << static_cast<int>(fornecedores.size()) << endl;
 			for(it = fornecedores.begin(); it!= fornecedores.end(); it++)
 			{
-				file << (*it) ->getIDFornecedor() << endl;
-				file << (*it) ->getNomeFornecedor() << endl;
-				file << (*it) ->getContato() << endl;
+				file << (*it).getIDFornecedor() << endl;
+				file << (*it).getNomeFornecedor() << endl;
+				file << (*it).getContato() << endl;
 			}
 		}
 }
