@@ -20,8 +20,11 @@ public:
 	Cliente(void);
 	Cliente(string nome, int ID, float horasMes);//construtor usado ao ler ficheiros
 	virtual ~Cliente(void);
-
 	virtual void imprime_Cliente();
+	int getIDcliente();
+	string getNomeCliente();
+	float getHorasMes();
+	virtual int getMensalidade();
 };
 
 class cRegistado: public Cliente{
@@ -29,7 +32,9 @@ class cRegistado: public Cliente{
 public:
 	cRegistado(string nome, int ID, float horasMes, int mensalidade);//construtor usado ao ler ficheiros
 	virtual ~cRegistado(void);
+	int getMensalidade();
 	void imprime_Cliente();
+	int getMensalidade();
 };
 
 class cOcasional: public Cliente{
@@ -38,6 +43,7 @@ public:
 	cOcasional(string nome, int ID, float horasMes, float totalMes);//construtor usado ao ler ficheiros
 	virtual ~cOcasional(void);
 	void imprime_Cliente();
+	int getMensalidade();
 };
 
 #endif

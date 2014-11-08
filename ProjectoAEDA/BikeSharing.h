@@ -13,7 +13,7 @@ using namespace std;
 class BikeSharing
 {
 public:
-	int last_bike; int last_costumer; //ids da ultima bicicleta e do ultimo cliente
+	int last_bike; int last_costumer; int last_fornecedor; //ids da ultima bicicleta e do ultimo cliente
 	vector<Fornecedor> fornecedores; 
 	vector<Cliente *> clientes;
 	vector<Estacao> estacoes;

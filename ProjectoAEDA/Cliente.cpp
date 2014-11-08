@@ -38,3 +38,28 @@ void cOcasional::imprime_Cliente(){
 	Cliente::imprime_Cliente();
 	float hRestantes; //inacabado
 }
+
+int Cliente::getIDcliente()
+{
+	return ID;
+}
+string Cliente::getNomeCliente()
+{
+	return nome;
+}
+float Cliente::getHorasMes()
+{
+	return horasMes;
+}
+int cRegistado::getMensalidade()
+{
+	if(mensalidade==69,6) {return 1;}
+		else if(mensalidade==124.8) {return 2;}
+		else if(mensalidade==220.8) {return 3;}
+		else {return 4;}
+}
+
+int cOcasional::getMensalidade()
+{
+	return 5;
+}

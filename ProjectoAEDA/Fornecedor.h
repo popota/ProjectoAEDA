@@ -9,9 +9,18 @@ using namespace std;
 
 class Fornecedor
 {
+	string nome;
+	int ID;
+	int Contato;
+
 public:
 	Fornecedor(void);
+	Fornecedor(string nome, int ID, int Contato);
 	virtual ~Fornecedor(void);
+	int getIDFornecedor();
+	string getNomeFornecedor();
+	int getContato();
+
 };
 
 #endif
