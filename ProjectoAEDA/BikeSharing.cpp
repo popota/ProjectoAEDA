@@ -13,17 +13,12 @@ BikeSharing::~BikeSharing(void)
 void BikeSharing::novo_Clienteaux(string nome, int opcao){
 	if(opcao==5){ //adicionar cliente ocasional
 		last_costumer++;
-		cOcasional *novoC= new cOcasional(nome,last_costumer);
+		cOcasional *novoC= new cOcasional(nome,last_costumer,0,0);
 		clientes.push_back(novoC);
 	}
 	else{ //adicionar cliente registado
-		float mensalidade;
-		if(opcao==1) mensalidade=69,6;
-		else if(opcao==2) mensalidade=124.8;
-		else if(opcao==3) mensalidade=220.8;
-		else mensalidade=250;
 		last_costumer++;
-		cRegistado *novoC= new cRegistado(nome,last_costumer,mensalidade);
+		cRegistado *novoC= new cRegistado(nome,last_costumer,0,opcao);
 		clientes.push_back(novoC);
 	}
 }
@@ -41,7 +36,7 @@ void BikeSharing::novo_Cliente(){
 	cout <<endl<< "Escolha opcao de conta:"<<endl;
 	cout << "1 - Pre-pago 24h/mes"<<endl;
 	cout << "2 - Pre-pago 48h/mes"<<endl;
-	cout << "3 - Pre-pago 92h/mes"<<endl;
+	cout << "3 - Pre-pago 96h/mes"<<endl;
 	cout << "4 - Pre-pago ilimitado"<<endl;
 	cout << "5 - Servico ocasional"<<endl;
 	cout << "6 - cancelar operacao"<<endl;

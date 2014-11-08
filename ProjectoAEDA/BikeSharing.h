@@ -4,11 +4,12 @@
 #include  "Fornecedor.h"
 #include "Cliente.h"
 #include "Estacao.h"
+
+
 #include "Bicicleta.h"
 
 using namespace std;
 
-#pragma once
 class BikeSharing
 {
 public:
