@@ -16,6 +16,7 @@ Cliente::~Cliente(void){}
 void Cliente::imprime_Cliente(){cout<<endl<<ID<<" - "<<nome;}
 
 int Cliente::getMensalidade(){ return 0; }
+float Cliente::getTotalMes(){ return 0; }
 
 void cRegistado::imprime_Cliente(){
 	Cliente::imprime_Cliente();
@@ -64,4 +65,14 @@ int cRegistado::getMensalidade()
 int cOcasional::getMensalidade()
 {
 	return 5;
+}
+
+float cRegistado::getTotalMes()
+{
+	return 0;
+}
+
+float cOcasional::getTotalMes()
+{
+	return totalMes;
 }

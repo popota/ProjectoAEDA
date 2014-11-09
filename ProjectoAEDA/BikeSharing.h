@@ -32,7 +32,7 @@ public:
 	void guardaClientesFicheiro(string ficheiro);
 	void guardaEstacaoFicheiro(string ficheiro);
 	void guardaFornecedoresFicheiro(string ficheiro);
-
+	vector<Cliente *> leClientesFicheiro(string ficheiro);
 };
 
 #endif

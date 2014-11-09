@@ -15,3 +15,5 @@ ProjectoAEDA/ProjectoAeda/ProjectoAeda/Debug/ProjectoAeda.log
 *.vcxproj
 *.filters
 *.obj
+*.exe
+*.ilk

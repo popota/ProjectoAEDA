@@ -25,6 +25,7 @@ public:
 	string getNomeCliente();
 	float getHorasMes();
 	virtual int getMensalidade();
+	virtual float getTotalMes();
 };
 
 class cRegistado: public Cliente{
@@ -34,6 +35,7 @@ public:
 	virtual ~cRegistado(void);
 	void imprime_Cliente();
 	int getMensalidade();
+	float getTotalMes();
 };
 
 class cOcasional: public Cliente{
@@ -43,6 +45,7 @@ public:
 	virtual ~cOcasional(void);
 	void imprime_Cliente();
 	int getMensalidade();
+	float getTotalMes();
 };
 
 #endif

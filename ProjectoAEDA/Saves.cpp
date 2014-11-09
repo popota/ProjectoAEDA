@@ -30,7 +30,8 @@ void BikeSharing::guardaClientesFicheiro(string ficheiro)
 			file << (*it) ->getIDcliente() << endl;
 			file << (*it) ->getNomeCliente() << endl;
 			file << (*it) ->getHorasMes() << endl;
-			file << (*it)->getMensalidade() << endl << endl;
+			file << (*it)->getMensalidade() << endl;
+			file << (*it)->getTotalMes() << endl << endl;
 
 		}
 
@@ -91,3 +92,68 @@ void  BikeSharing::guardaEstacaoFicheiro(string ficheiro)
 	file.close();
 }
 
+vector<Cliente *> BikeSharing::leClientesFicheiro(string ficheiro)
+{
+	vector<Cliente*> clientestemp;
+	ifstream doc;
+
+	int IDInt = 0;
+	float horasMesInt = 0;
+	int mensalidadeInt = 0;
+	int lastBikeInt = 0;
+	int lastCostumerInt = 0;
+	int lastFornecedorInt = 0;
+	int clientessizeint = 0;
+	float TotalMesInt = 0;
+
+	string ID;
+	string nome;
+	string horasMes;
+	string Mensalidade;
+	string LastBike;
+	string LastCostumer;
+	string LastFornecedor;
+	string ClientesSize;
+	string emBranco;
+	string TotalMes;
+
+	doc.open(ficheiro.c_str(), ifstream::in);
+
+	if (doc.is_open())
+	{
+		getline(doc, ClientesSize);
+		clientessizeint = atoi(ID.c_str());
+		getline(doc, emBranco);
+		getline(doc, LastBike);
+		lastBikeInt = atoi(LastBike.c_str());
+		getline(doc, LastCostumer);
+		lastCostumerInt = atoi(LastCostumer.c_str());
+		getline(doc, LastFornecedor);
+		lastFornecedorInt = atoi(LastFornecedor.c_str());
+		getline(doc, emBranco);
+		for (unsigned int i = 0; i < clientessizeint; i++)
+		{
+			getline(doc, ID);
+			IDInt = atoi(ID.c_str());
+			getline(doc, nome);
+			getline(doc, horasMes);
+			horasMesInt = atoi(horasMes.c_str());
+			getline(doc, Mensalidade);
+			mensalidadeInt = atoi(Mensalidade.c_str());
+			getline(doc, TotalMes);
+			TotalMesInt = atoi(TotalMes.c_str());
+			getline(doc, emBranco);
+			Cliente *a1 = new Cliente(nome, IDInt, horasMesInt);
+			if (mensalidadeInt == 5)
+			{
+				cOcasional a2(nome, IDInt, horasMesInt, TotalMesInt);
+			}
+			else 
+			{
+				cRegistado a2(nome, IDInt, horasMesInt, mensalidadeInt);
+			}
+			clientestemp.push_back(a1);
+		}
+	}
+	return clientestemp;
+}
