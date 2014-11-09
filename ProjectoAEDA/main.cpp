@@ -36,7 +36,7 @@ void menu_clientes(){
 	    cin.clear();
 	    getline(cin, input);
 	    opcao = atoi(input.c_str());
-	 
+
 	    switch (opcao) {
 	    case 1:
 			company.lista_clientes();
@@ -45,7 +45,7 @@ void menu_clientes(){
 			company.novo_Cliente();
 			break;
 		case 3:
-			//edita_cliente();
+			company.edita_cliente();
 			break;
 		case 4:
 			//lista_bicicletas();

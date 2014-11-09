@@ -41,7 +41,7 @@ cOcasional::cOcasional(string nome, int ID, float horasMes, float totalMes): Cli
 
 void cOcasional::imprime_Cliente(){
 	Cliente::imprime_Cliente();
-	cout<<" - "<<getHorasMes()<<" horas restantes este mes";
+	cout<<" - "<<getHorasMes()<<" horas de servico este mes";
 }
 
 int Cliente::getIDcliente()
@@ -77,4 +77,48 @@ float cRegistado::getTotalMes()
 float cOcasional::getTotalMes()
 {
 	return totalMes;
+}
+ 
+void Cliente::editaCliente(){
+	string input;
+	cout<<endl<<"Prima enter para campos que nao quer alterar"<<endl;
+	cout<<"Nome (Actual - "<<nome<<"):";
+	cin.clear();
+	getline(cin, input);
+	if(input!="")this->nome=input;
+}
+
+void cRegistado::editaCliente(){
+	string input;
+	int opcao;
+	Cliente::editaCliente();
+	cout<<endl<<"Pack mensal (Actual - "<<horasPagas<<" horas/Mes, escolher opcao de 1 a 4):";
+	cin.clear();
+	getline(cin, input);
+	opcao = atoi(input.c_str());
+	if(input!=""){
+		if(opcao==1) {
+			this->horasPagas=24;
+			this->mensalidade=69,6;
+		}
+		else if(opcao==2) {
+			this->horasPagas=48;
+			this->mensalidade=124.8;
+		}
+		else if(opcao==3) {
+			this->horasPagas=96;
+			this->mensalidade=220.8;
+		}
+		else {
+			this->horasPagas=744;
+			this->mensalidade=250;
+		}
+		
+	}
+	cout<<endl<<"Cliente actualizado com sucesso"<<endl;
+}
+
+void cOcasional::editaCliente(){
+	Cliente::editaCliente();
+	cout<<endl<<"Cliente actualizado com sucesso"<<endl;
 }

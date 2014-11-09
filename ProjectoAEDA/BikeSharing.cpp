@@ -93,3 +93,27 @@ void BikeSharing::lista_clientes(){
 			(*it) ->imprime_Cliente();
 		}
 }
+
+void BikeSharing::edita_cliente(){
+	int opcao, fid; 
+	string input;
+	cout<<endl<<"*** EDITA CLIENTE ***"<<endl;
+	while(true){
+	cout<<"Cliente ID ou 0 to exit:";
+	cin.clear();
+	getline(cin, input);
+	opcao = atoi(input.c_str());
+
+	if(opcao==0)return;
+	else if(opcao<0 || opcao>last_costumer) cout<<endl<<"No valid ID, please enter valid ID";
+	else{
+		vector<Cliente *>::iterator it;
+			for(it = clientes.begin(); it!= clientes.end(); it++)
+			{
+				fid=(*it)->getID();
+				if(fid==opcao) {(*it)->editaCliente(); return;}
+			}
+			cout<<endl<<"No valid ID, please enter valid ID";
+		}
+	}
+}

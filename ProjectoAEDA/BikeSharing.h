@@ -23,12 +23,17 @@ public:
 	BikeSharing(void);
 	virtual ~BikeSharing(void);
 	
-	void lista_clientes();
-	void novo_Cliente();
+	int getLastBike(void);
+	int getLastCostumer(void);
+	int getLastFornecedor(void);
+
+	//menu clientes
+	void lista_clientes(void);
+	void novo_Cliente(void);
 	void novo_Clienteaux(string nome, int opcao);
-	int getLastBike();
-	int getLastCostumer();
-	int getLastFornecedor();
+	void edita_cliente(void);
+
+	//save and load
 	void guardaClientesFicheiro(string ficheiro);
 	void guardaEstacaoFicheiro(string ficheiro);
 	void guardaFornecedoresFicheiro(string ficheiro);
