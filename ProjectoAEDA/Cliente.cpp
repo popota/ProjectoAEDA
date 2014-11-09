@@ -15,6 +15,8 @@ Cliente::~Cliente(void){}
 
 void Cliente::imprime_Cliente(){cout<<endl<<ID<<" - "<<nome;}
 
+int Cliente::getMensalidade(){};
+
 void cRegistado::imprime_Cliente(){
 	Cliente::imprime_Cliente();
 	float hRestantes; //inacabado

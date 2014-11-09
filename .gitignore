@@ -1,0 +1,16 @@
+ProjectoAEDA/ProjectoAeda/ProjectoAeda.opensdf
+ProjectoAEDA/ProjectoAeda/ProjectoAeda.sdf
+ProjectoAEDA/ProjectoAeda/ProjectoAeda.sln
+ProjectoAEDA/ProjectoAeda/ProjectoAeda.v12.suo
+ProjectoAEDA/ProjectoAeda/ProjectoAeda/Debug/Aluguer.obj
+ProjectoAEDA/ProjectoAeda/ProjectoAeda/Debug/Bicicleta.obj
+ProjectoAEDA/ProjectoAeda/ProjectoAeda/Debug/BikeSharing.obj
+ProjectoAEDA/ProjectoAeda/ProjectoAeda/Debug/Estacao.obj
+ProjectoAEDA/ProjectoAeda/ProjectoAeda/Debug/Fornecedor.obj
+ProjectoAEDA/ProjectoAeda/ProjectoAeda/Debug/main.obj
+ProjectoAEDA/ProjectoAeda/ProjectoAeda/Debug/ProjectoAeda.log
+*.tlog
+*.idb
+*.pdb
+*.vcxproj
+*.filters

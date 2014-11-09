@@ -32,7 +32,6 @@ class cRegistado: public Cliente{
 public:
 	cRegistado(string nome, int ID, float horasMes, int mensalidade);//construtor usado ao ler ficheiros
 	virtual ~cRegistado(void);
-	int getMensalidade();
 	void imprime_Cliente();
 	int getMensalidade();
 };
