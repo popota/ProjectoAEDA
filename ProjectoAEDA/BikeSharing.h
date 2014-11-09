@@ -29,6 +29,9 @@ public:
 	int getLastBike();
 	int getLastCostumer();
 	int getLastFornecedor();
+	void guardaClientesFicheiro(string ficheiro);
+	void guardaEstacaoFicheiro(string ficheiro);
+	void guardaFornecedoresFicheiro(string ficheiro);
 
 };
 

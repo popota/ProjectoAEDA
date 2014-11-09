@@ -8,6 +8,10 @@
 using namespace std;
 
 BikeSharing company;
+#define clientes "clientes.txt"
+#define fornecedores "fornecedores.txt"  
+#define estacoes "estacoes.txt"
+#define bicicletas "bicicletas.txt"   
 
 //----------------------------------------------------------------------------------------------------
 //----------------------------------- CLIENTES --------------------------------------------------------
@@ -191,6 +195,9 @@ void menu_fornecedores (){
 //---------------------------- FORNECEDORES E BICICLETAS -----------------------------------------------
 //----------------------------------------------------------------------------------------------------
 
+//----------------------------------------------------------------------------------------------------
+//-------------------------------- ECRAS PRINCIPAIS --------------------------------------------------
+//----------------------------------------------------------------------------------------------------
 //menu inicial
 void menu_inicial (){
 	string input;
@@ -235,10 +242,36 @@ void menu_inicial (){
 	}
 }
 
+void loadingAPP(void){
+	cout<<endl<<"*** LOADING DATA ***"<<endl;
+	cout<<"  * CLIENTES"<<endl;
+	//company.leClientesFicheiro(clientes);
+	cout<<"  * ESTACOES"<<endl;
+	//company.guardaEstacaoFicheiro(estacoes);
+	cout<<"  * FORNECEDORES"<<endl;
+	//company.guardaFornecedoresFicheiro(fornecedores);
+	cout<< endl<< endl<< "*** BEM - VINDO ***"<< endl<< endl;
+}
+
+void savingAPP(void){
+	cout<<"*** SAVING DATA ***"<<endl;
+	cout<<"  * CLIENTES"<<endl;
+	company.guardaClientesFicheiro(clientes);
+	cout<<"  * ESTACOES"<<endl;
+	company.guardaEstacaoFicheiro(estacoes);
+	cout<<"  * FORNECEDORES"<<endl;
+	company.guardaFornecedoresFicheiro(fornecedores);
+	cout<< endl<< endl<< "*** ADEUS ***";
+}
+
+//----------------------------------------------------------------------------------------------------
+//-------------------------------- ECRAS PRINCIPAIS --------------------------------------------------
+//----------------------------------------------------------------------------------------------------
 
 //main
 int main() {
-	//start_app(); //cria estrutura de dados apartir da leitura dos ficheiros .txt
+	loadingAPP();
 	menu_inicial();
+	savingAPP();
     return 0;
 }

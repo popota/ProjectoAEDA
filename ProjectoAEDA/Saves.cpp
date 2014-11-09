@@ -11,7 +11,7 @@
 
 using namespace std;
 
-void guardaClientesFicheiro(vector<Cliente *> clientes, string ficheiro)
+void BikeSharing::guardaClientesFicheiro(string ficheiro)
 {
 	ofstream file;
 
@@ -38,7 +38,7 @@ void guardaClientesFicheiro(vector<Cliente *> clientes, string ficheiro)
 	file.close();
 }
 
-void guardaFornecedoresFicheiro(vector<Fornecedor> fornecedores, string ficheiro)
+void  BikeSharing::guardaFornecedoresFicheiro(string ficheiro)
 {
 	ofstream file;
 
@@ -59,7 +59,7 @@ void guardaFornecedoresFicheiro(vector<Fornecedor> fornecedores, string ficheiro
 }
 
 
-void guardaEstacaoFicheiro(vector<Estacao> estacoes, string ficheiro)
+void  BikeSharing::guardaEstacaoFicheiro(string ficheiro)
 {
 	ofstream file;
 	file.open(ficheiro.c_str(), ofstream::out);
