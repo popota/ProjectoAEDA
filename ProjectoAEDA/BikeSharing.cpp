@@ -70,4 +70,17 @@ void BikeSharing::novo_Cliente(){
 	}
 }
 
+int BikeSharing::getLastBike()
+{
+	return last_bike;
+}
 
+int BikeSharing::getLastCostumer()
+{
+	return last_costumer;
+}
+
+int BikeSharing::getLastFornecedor()
+{
+	return last_fornecedor;
+}

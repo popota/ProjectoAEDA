@@ -19,18 +19,18 @@ void guardaClientesFicheiro(vector<Cliente *> clientes, string ficheiro)
 
 	if (file.is_open())
 	{
-		vector<Cliente *>::iterator it;
+		
 		file << static_cast<int>(clientes.size()) << endl;
-		file << endl << BikeSharing::last_bike << endl;
-		file << BikeSharing::last_costumer << endl;
-		file << BikeSharing::last_fornecedor << endl << endl;
-
+		file << endl << getLastBike() << endl;
+		file << getLastCostumer() << endl;
+		file << getLastFornecedor() << endl << endl;
+		vector<Cliente *>::iterator it;
 		for(it = clientes.begin(); it!= clientes.end(); it++)
 		{
 			file << (*it) ->getIDcliente() << endl;
 			file << (*it) ->getNomeCliente() << endl;
 			file << (*it) ->getHorasMes() << endl;
-			file << (*it) ->getMensalidade() << endl;
+			file << (*it)->getMensalidade() << endl << endl;
 
 		}
 
@@ -52,7 +52,7 @@ void guardaFornecedoresFicheiro(vector<Fornecedor> fornecedores, string ficheiro
 			{
 				file << (*it).getIDFornecedor() << endl;
 				file << (*it).getNomeFornecedor() << endl;
-				file << (*it).getContato() << endl;
+				file << (*it).getContato() << endl << endl;
 			}
 		}
 		file.close();
@@ -71,10 +71,10 @@ void guardaEstacaoFicheiro(vector<Estacao> estacoes, string ficheiro)
 		for(it = estacoes.begin(); it!= estacoes.end(); it++)
 		{
 			file << (*it).getIDEstacao() << endl;
-			file << (*it).getCidade()<< endl << endl;
+			file << (*it).getCidade() << endl;
 			vector<Bicicleta> bicicletas = (*it).getVectordasBicicletas();
 			vector<Bicicleta>::iterator itb;
-			file << static_cast<int>(bicicletas.size()) << endl;
+			file << static_cast<int>(bicicletas.size()) << endl << endl;
 			for(itb = bicicletas.begin();itb != bicicletas.end(); itb++)
 			{
 				file << (*itb).getBicicletaID() << endl;
