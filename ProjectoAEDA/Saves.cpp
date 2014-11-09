@@ -59,7 +59,6 @@ void  BikeSharing::guardaFornecedoresFicheiro(string ficheiro)
 		file.close();
 }
 
-
 void  BikeSharing::guardaEstacaoFicheiro(string ficheiro)
 {
 	ofstream file;

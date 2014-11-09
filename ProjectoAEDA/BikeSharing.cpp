@@ -84,3 +84,12 @@ int BikeSharing::getLastFornecedor()
 {
 	return last_fornecedor;
 }
+
+void BikeSharing::lista_clientes(){
+	cout<<endl<<"*** LISTA CLIENTES ***"<<endl;
+	vector<Cliente *>::iterator it;
+		for(it = clientes.begin(); it!= clientes.end(); it++)
+		{
+			(*it) ->imprime_Cliente();
+		}
+}

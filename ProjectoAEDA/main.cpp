@@ -39,7 +39,7 @@ void menu_clientes(){
 	 
 	    switch (opcao) {
 	    case 1:
-			//company.lista_clientes();
+			company.lista_clientes();
 			break;
 		case 2:
 			company.novo_Cliente();
@@ -256,7 +256,7 @@ void loadingAPP(void){
 }
 
 void savingAPP(void){
-	cout<<"*** SAVING DATA ***"<<endl;
+	cout<<endl<<"*** SAVING DATA ***"<<endl;
 	cout<<"  * CLIENTES"<<endl;
 	company.guardaClientesFicheiro(clientest);
 	cout<<"  * ESTACOES"<<endl;
@@ -272,8 +272,11 @@ void savingAPP(void){
 
 //main
 int main() {
+	string pause;
 	loadingAPP();
 	menu_inicial();
 	savingAPP();
+	cin.clear();
+    getline(cin, pause);
     return 0;
 }

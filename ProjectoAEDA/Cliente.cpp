@@ -20,7 +20,9 @@ float Cliente::getTotalMes(){ return 0; }
 
 void cRegistado::imprime_Cliente(){
 	Cliente::imprime_Cliente();
-	float hRestantes; //inacabado
+	float hRestantes; 
+	hRestantes=horasPagas-getHorasMes();
+	cout<<" - "<<hRestantes<<" horas restantes este mes";
 }
 
 cRegistado::~cRegistado(void){}
@@ -39,7 +41,7 @@ cOcasional::cOcasional(string nome, int ID, float horasMes, float totalMes): Cli
 
 void cOcasional::imprime_Cliente(){
 	Cliente::imprime_Cliente();
-	float hRestantes; //inacabado
+	cout<<" - "<<getHorasMes()<<" horas restantes este mes";
 }
 
 int Cliente::getIDcliente()
