@@ -30,8 +30,8 @@ void BikeSharing::guardaClientesFicheiro(string ficheiro)
 			file << (*it) ->getIDcliente() << endl;
 			file << (*it) ->getNomeCliente() << endl;
 			file << (*it) ->getHorasMes() << endl;
-			file << (*it)->getMensalidade() << endl;
-			file << (*it)->getTotalMes() << endl << endl;
+			file << (*it) ->getMensalidade() << endl;
+			file << (*it) ->getTotalMes() << endl << endl;
 
 		}
 
@@ -143,17 +143,55 @@ vector<Cliente *> BikeSharing::leClientesFicheiro(string ficheiro)
 			getline(doc, TotalMes);
 			TotalMesInt = atoi(TotalMes.c_str());
 			getline(doc, emBranco);
-			Cliente *a1 = new Cliente(nome, IDInt, horasMesInt);
 			if (mensalidadeInt == 5)
 			{
-				cOcasional a2(nome, IDInt, horasMesInt, TotalMesInt);
+				cOcasional *a2 =new cOcasional(nome, IDInt, horasMesInt, TotalMesInt);
+				clientestemp.push_back(a2);
 			}
 			else 
 			{
-				cRegistado a2(nome, IDInt, horasMesInt, mensalidadeInt);
+				cRegistado *a2= new cRegistado(nome, IDInt, horasMesInt, mensalidadeInt);
+				clientestemp.push_back(a2);
 			}
-			clientestemp.push_back(a1);
+			
 		}
 	}
 	return clientestemp;
+}
+
+vector<Fornecedor> BikeSharing::leFornecedoresFicheiro(string ficheiro)
+{
+	vector<Fornecedor> fornecedorestemp;
+	ifstream doc;
+
+	int IDint = 0;
+	int ContatoInt = 0;
+	int SizeInt = 0;
+
+	string ID;
+	string nome;
+	string contato;
+	string size;
+	string emBranco;
+
+	doc.open(ficheiro.c_str(), ifstream::in);
+
+	if (doc.is_open())
+	{
+		getline(doc, size);
+		SizeInt = atoi(size.c_str());
+		getline(doc, emBranco);
+		for (unsigned int i = 0; i < SizeInt; i++)
+		{
+			getline(doc, ID);
+			IDint = atoi(ID.c_str());
+			getline(doc, nome);
+			getline(doc, contato);
+			ContatoInt = atoi(contato.c_str());
+			getline(doc, emBranco);
+			Fornecedor a1(nome , IDint , ContatoInt);
+			fornecedorestemp.push_back(a1);
+		}
+	}
+	return fornecedorestemp;
 }

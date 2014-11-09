@@ -33,6 +33,7 @@ public:
 	void guardaEstacaoFicheiro(string ficheiro);
 	void guardaFornecedoresFicheiro(string ficheiro);
 	vector<Cliente *> leClientesFicheiro(string ficheiro);
+	vector<Fornecedor> leFornecedoresFicheiro(string ficheiro);
 };
 
 #endif

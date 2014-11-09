@@ -8,8 +8,8 @@
 using namespace std;
 
 BikeSharing company;
-#define clientes "clientes.txt"
-#define fornecedores "fornecedores.txt"  
+#define clientest "clientes.txt"
+#define fornecedorest "fornecedores.txt"  
 #define estacoes "estacoes.txt"
 #define bicicletas "bicicletas.txt"   
 
@@ -245,22 +245,24 @@ void menu_inicial (){
 void loadingAPP(void){
 	cout<<endl<<"*** LOADING DATA ***"<<endl;
 	cout<<"  * CLIENTES"<<endl;
-	//company.leClientesFicheiro(clientes);
+	company.leClientesFicheiro(clientest);
+	vector<Cliente *> clientes = company.leClientesFicheiro(clientest);
 	cout<<"  * ESTACOES"<<endl;
 	//company.guardaEstacaoFicheiro(estacoes);
 	cout<<"  * FORNECEDORES"<<endl;
-	//company.guardaFornecedoresFicheiro(fornecedores);
+	company.leFornecedoresFicheiro(fornecedorest);
+	vector<Fornecedor> fornecedores = company.leFornecedoresFicheiro(fornecedorest);
 	cout<< endl<< endl<< "*** BEM - VINDO ***"<< endl<< endl;
 }
 
 void savingAPP(void){
 	cout<<"*** SAVING DATA ***"<<endl;
 	cout<<"  * CLIENTES"<<endl;
-	company.guardaClientesFicheiro(clientes);
+	company.guardaClientesFicheiro(clientest);
 	cout<<"  * ESTACOES"<<endl;
 	company.guardaEstacaoFicheiro(estacoes);
 	cout<<"  * FORNECEDORES"<<endl;
-	company.guardaFornecedoresFicheiro(fornecedores);
+	company.guardaFornecedoresFicheiro(fornecedorest);
 	cout<< endl<< endl<< "*** ADEUS ***";
 }
 
